@@ -1,7 +1,7 @@
 ---
-title: "Plotting III"
-author: "Explorative Datenanalyse mit R<br>
-  <a href='https://therbootcamp.github.io'>The R Bootcamp</a>
+title: "ggplot III"
+author: "R 4 Data Science<br>
+  <a href='https://therbootcamp.github.io'>The R Bootcamp @ CSS</a>
   <br>
   <a href='https://therbootcamp.github.io/EDA_2022Mar/'>
     <i class='fas fa-clock' style='font-size:.9em;'></i>
@@ -15,7 +15,7 @@ author: "Explorative Datenanalyse mit R<br>
   <a href='https://www.linkedin.com/company/basel-r-bootcamp/'>
     <i class='fab fa-linkedin' style='font-size: .9em;'></i>
   </a>"
-date: "März 2022"
+date: "Dezember 2022"
 output:
   xaringan::moon_reader:
     css: ["default", "baselrbootcamp.css"]
@@ -43,7 +43,7 @@ layout: true
     </a>
     <a href="https://therbootcamp.github.io/">
       <font color="#7E7E7E">
-       Explorative Datenanalyse mit R | März 2022
+       R 4 Data Science | Dezember 2022
       </font>
     </a>
     </span>

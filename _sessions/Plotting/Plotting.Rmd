@@ -1,7 +1,7 @@
 ---
-title: "Plotting"
-author: "Explorative Datenanalyse mit R<br>
-  <a href='https://therbootcamp.github.io'>The R Bootcamp</a>
+title: "ggplot"
+author: "R 4 Data Science<br>
+  <a href='https://therbootcamp.github.io'>The R Bootcamp @ CSS</a>
   <br>
   <a href='https://therbootcamp.github.io/EDA_2022Mar/'>
     <i class='fas fa-clock' style='font-size:.9em;'></i>
@@ -15,7 +15,7 @@ author: "Explorative Datenanalyse mit R<br>
   <a href='https://www.linkedin.com/company/basel-r-bootcamp/'>
     <i class='fab fa-linkedin' style='font-size: .9em;'></i>
   </a>"
-date: "März 2022"
+date: "Dezember 2022"
 output:
   xaringan::moon_reader:
     css: ["default", "baselrbootcamp.css"]
@@ -43,7 +43,7 @@ layout: true
     </a>
     <a href="https://therbootcamp.github.io/">
       <font color="#7E7E7E">
-       Explorative Datenanalyse mit R | März 2022
+       R 4 Data Science | Dezember 2022
       </font>
     </a>
     </span>
@@ -195,76 +195,29 @@ plot(x = baselers$groesse,
 ]
 
 
-
 ---
 
-# Probleme mit Base R plotting
+.pull-left3[
 
-.pull-left4[
+# Tidyverse
 
 <ul>
-  <li class="m1"><span>Die <high>Ästhetik</high> ist nicht mehr zeitgemäss.</span></li>
-  <li class="m2"><span>Schönere Plots = sehr <high>viel Code.</high></span></li>
-  <li class="m3"><span>Generell sehr <high>unflexibel.</high></high></span></li>
+  <li class="m1"><span>Das <mono>tidyverse</mono> ist...</span></li><br>
+  <ul class="level">
+    <li><span>Eine Auswahl nutzerfreundlicher <high>Pakete</high> für die Analyse von <high>tidy data</high></span></li><br>
+    <li><span>Ein <high>Ökosystem</high> für Analytics und Data Science mit konsistenten Designprinzipien</span></li><br>
+    <li><span>Ein <high>Dialekt</high> von R</span></li>
+  </ul>
 </ul>
+
 ]
 
-.pull-right5[
-
+.pull-right65[
+<br><br>
 <p align="center">
-<br>
-<img src="image/outdated.jpeg">
-<br>
-<font style="font-size:10px">from <a href="https://www.healthhosts.com/4-signs-your-website-is-outdated/">healthhosts.com</a></font>
+<img src="image/tidyverse_ggplot.png" height = "520px">
 </p>
-
 ]
-
----
-
-# Das mächtige <mono>tidyverse</mono>
-
-<ul>
-  <li class="m1"><span>Das <a href="https://www.tidyverse.org/"><mono>tidyverse</mono></a> ist im Kern eine Sammlung hoch-performanter, nutzerfreundlicher Pakete, die speziell für eine effizientere Datenanalyse entwickelt wurden.</span></li>
-</ul>
-
-<ol style="padding-left:72px">
-  <li><high><mono>ggplot2</mono> für Grafiken</high>.</li>
-  <li><mono>dplyr</mono> für Datenverarbeitung.</li>
-  <li><mono>tidyr</mono> für Datenverarbeitung.</li>
-  <li><mono>readr</mono> für Daten I/O.</li>
-  <li><mono>purrr</mono> für funktionales Programmieren.</li>
-  <li><mono>tibble</mono> für moderne <mono>data_frame</mono>'s.</li>
-</ol>
-
-<table style="cellspacing:0; cellpadding:0; border:none;padding-top:20px">
-  <col width="15%">
-  <col width="15%">
-  <col width="15%">
-  <col width="15%">
-  <col width="15%">
-  <col width="15%">
-  <tr>
-    <td bgcolor="white">
-    <img src="image/hex-ggplot2.png" height=160px></img>
-    </td>
-        <td bgcolor="white">
-    <img src="image/hex-dplyr.png"height=160px style="opacity:.2"></img>
-    </td>
-    <td bgcolor="white">
-    <img src="image/hex-tidyr.png"height=160px style="opacity:.2"></img>
-    </td>
-    <td bgcolor="white">
-    <img src="image/hex-readr.png"height=160px style="opacity:.2"></img>
-    </td>
-    <td bgcolor="white">
-    <img src="image/hex-purrr.png"height=160px style="opacity:.2"></img>
-    </td>
-    <td bgcolor="white">
-    <img src="image/hex-tibble.png"height=160px style="opacity:.2"></img>
-    </td>
-  </tr>
-</table>
 
 
 ---
@@ -283,8 +236,6 @@ plot(x = baselers$groesse,
   <li class="m3"><span><high>geoms</high>: Objekte im Plot</high></span></li>
   <li class="m4"><span><high>labs</high>: Annotierung des Plots</high></span></li>
   <li class="m5"><span><high>themes</high>: Ästhetische Gestaltung</high></span></li>
-  <li class="m6"><span><high>facets</high>: Auftrennung des Plots </high></span></li>
-  <li class="m7"><span><high>scales</high>: Skalierung der Achsen</high></span></li>
 </ul>
 
 ]
@@ -1133,7 +1084,7 @@ goal
 
 class: middle, center
 
-<h1><a href="https://therbootcamp.github.io/EDA_2022Mar/_sessions/Plotting/Plotting_practical.html">Practical</a></h1>
+<h1><a href="https://therbootcamp.github.io/R4DS_2022CSS/_sessions/Plotting/Plotting_practical.html">Practical</a></h1>
 
 
 

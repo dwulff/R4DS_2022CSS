@@ -1,7 +1,7 @@
 ---
-title: "Plotting II"
-author: "Explorative Datenanalyse mit R<br>
-  <a href='https://therbootcamp.github.io'>The R Bootcamp</a>
+title: "ggplot II"
+author: "R 4 Data Science<br>
+  <a href='https://therbootcamp.github.io'>The R Bootcamp @ CSS</a>
   <br>
   <a href='https://therbootcamp.github.io/EDA_2022Mar/'>
     <i class='fas fa-clock' style='font-size:.9em;'></i>
@@ -15,7 +15,7 @@ author: "Explorative Datenanalyse mit R<br>
   <a href='https://www.linkedin.com/company/basel-r-bootcamp/'>
     <i class='fab fa-linkedin' style='font-size: .9em;'></i>
   </a>"
-date: "März 2022"
+date: "Dezember 2022"
 output:
   xaringan::moon_reader:
     css: ["default", "baselrbootcamp.css"]
@@ -43,7 +43,7 @@ layout: true
     </a>
     <a href="https://therbootcamp.github.io/">
       <font color="#7E7E7E">
-       Explorative Datenanalyse mit R | März 2022
+       R 4 Data Science | Dezember 2022
       </font>
     </a>
     </span>
@@ -71,6 +71,30 @@ library(extrafont)
 library(gridExtra)
 #loadfonts()
 ```
+
+.pull-left3[
+
+# Tidyverse
+
+<ul>
+  <li class="m1"><span>Das <mono>tidyverse</mono> ist...</span></li><br>
+  <ul class="level">
+    <li><span>Eine Auswahl nutzerfreundlicher <high>Pakete</high> für die Analyse von <high>tidy data</high></span></li><br>
+    <li><span>Ein <high>Ökosystem</high> für Analytics und Data Science mit konsistenten Designprinzipien</span></li><br>
+    <li><span>Ein <high>Dialekt</high> von R</span></li>
+  </ul>
+</ul>
+
+]
+
+.pull-right65[
+<br><br>
+<p align="center">
+<img src="image/tidyverse_ggplot.png" height = "520px">
+</p>
+]
+
+---
 
 # Plots anpassen
 
@@ -1257,4 +1281,4 @@ ggsave(filename = "mein_plot.png",
 
 class: middle, center
 
-<h1><a href="https://therbootcamp.github.io/EDA_2022Mar/_sessions/PlottingII/PlottingII_practical.html">Practical</a></h1>
+<h1><a href="https://therbootcamp.github.io/R4DS_2022CSS/_sessions/PlottingII/PlottingII_practical.html">Practical</a></h1>

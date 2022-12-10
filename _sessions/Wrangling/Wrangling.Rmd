@@ -1,7 +1,7 @@
 ---
-title: "Wrangling"
-author: "Explorative Datenanalyse mit R<br>
-  <a href='https://therbootcamp.github.io'>The R Bootcamp</a>
+title: "dplyr I"
+author: "R 4 Data Science<br>
+  <a href='https://therbootcamp.github.io'>The R Bootcamp @ CSS</a>
   <br>
   <a href='https://therbootcamp.github.io/EDA_2022Mar/'>
     <i class='fas fa-clock' style='font-size:.9em;'></i>
@@ -15,7 +15,7 @@ author: "Explorative Datenanalyse mit R<br>
   <a href='https://www.linkedin.com/company/basel-r-bootcamp/'>
     <i class='fab fa-linkedin' style='font-size: .9em;'></i>
   </a>"
-date: "März 2022"
+date: "Dezember 2022"
 output:
   xaringan::moon_reader:
     css: ["default", "baselrbootcamp.css"]
@@ -43,7 +43,7 @@ layout: true
     </a>
     <a href="https://therbootcamp.github.io/">
       <font color="#7E7E7E">
-       Explorative Datenanalyse mit R | März 2022
+       R 4 Data Science | Dezember 2022
       </font>
     </a>
     </span>
@@ -75,6 +75,34 @@ basel = readr::read_csv('1_data/basel.csv')
 
 
 --->
+
+
+
+.pull-left3[
+
+# Tidyverse
+
+<ul>
+  <li class="m1"><span>Das <mono>tidyverse</mono> ist...</span></li><br>
+  <ul class="level">
+    <li><span>Eine Auswahl nutzerfreundlicher <high>Pakete</high> für die Analyse von <high>tidy data</high></span></li><br>
+    <li><span>Ein <high>Ökosystem</high> für Analytics und Data Science mit konsistenten Designprinzipien</span></li><br>
+    <li><span>Ein <high>Dialekt</high> von R</span></li>
+  </ul>
+</ul>
+
+]
+
+.pull-right65[
+<br><br>
+<p align="center">
+<img src="image/tidyverse_dplyr.png" height = "520px">
+</p>
+]
+
+
+
+---
 
 .pull-left45[
 
@@ -160,47 +188,6 @@ ergebnisse
 
 ]
 
-
----
-
-# Das <mono>tidyverse</mono>
-
-<ul>
-  <li class="m1"><span>Das <a href="https://www.tidyverse.org/"><mono>tidyverse</mono></a> ist eine Sammlung hoch-performanter, nutzerfreundlicher Pakete für eine effiziente Datenaufbereitung und -analyse.</span></li>
-</ul>
-
-<ol style="padding-left:72px">
-  <li><mono>readr</mono> für Daten I/O.</li>
-  <li><mono>tibble</mono> für moderne <mono>data_frame</mono>'s.</li>
-  <li><high><mono>dplyr</mono> für Datenverarbeitung</high>.</li>
-  <li><high><mono>tidyr</mono> für Datenverarbeitung</high>.</li>
-  <li><mono>ggplot2</mono> für Grafiken.</li>
-</ol>
-
-<table style="cellspacing:0; cellpadding:0; border:none;padding-top:20px" width=90%>
-  <col width="15%">
-  <col width="15%">
-  <col width="15%">
-  <col width="15%">
-  <col width="15%">
-  <tr>
-    <td bgcolor="white">
-    <img src="image/hex-readr.png"height=200px style="opacity:.2"></img>
-    </td>
-    <td bgcolor="white">
-    <img src="image/hex-tibble.png"height=200px style="opacity:.2"></img>
-    </td>
-    <td bgcolor="white">
-    <img src="image/hex-dplyr.png"height=200px></img>
-    </td>
-    <td bgcolor="white">
-    <img src="image/hex-tidyr.png"height=200px></img>
-    </td>
-    <td bgcolor="white">
-    <img src="image/hex-ggplot2.png" height=200px style="opacity:.2"></img>
-    </td>
-  </tr>
-</table>
 
 ---
 
@@ -783,5 +770,5 @@ patienten_ergebnisse %>%
 
 class: middle, center
 
-<h1><a href="https://therbootcamp.github.io/EDA_2022Mar/_sessions/Wrangling/Wrangling_practical.html">Practical</a></h1>
+<h1><a href="https://therbootcamp.github.io/R4DS_2022CSS/_sessions/Wrangling/Wrangling_practical.html">Practical</a></h1>
 

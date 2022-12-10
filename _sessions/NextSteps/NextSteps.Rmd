@@ -1,7 +1,7 @@
 ---
 title: "Nächste Schritte"
-author: "Explorative Datenanalyse mit R<br>
-  <a href='https://therbootcamp.github.io'>The R Bootcamp</a>
+author: "R 4 Data Science<br>
+  <a href='https://therbootcamp.github.io'>The R Bootcamp @ CSS</a>
   <br>
   <a href='https://therbootcamp.github.io/EDA_2022Mar/'>
     <i class='fas fa-clock' style='font-size:.9em;'></i>
@@ -15,7 +15,7 @@ author: "Explorative Datenanalyse mit R<br>
   <a href='https://www.linkedin.com/company/basel-r-bootcamp/'>
     <i class='fab fa-linkedin' style='font-size: .9em;'></i>
   </a>"
-date: "März 2022"
+date: "Dezember 2022"
 output:
   xaringan::moon_reader:
     css: ["default", "baselrbootcamp.css"]
@@ -43,7 +43,7 @@ layout: true
     </a>
     <a href="https://therbootcamp.github.io/">
       <font color="#7E7E7E">
-       Explorative Datenanalyse mit R | März 2022
+       R 4 Data Science | Dezember 2022
       </font>
     </a>
     </span>
@@ -64,26 +64,26 @@ library(tidyverse)
 ```
 
 
-.pull-left45[
+.pull-left35[
 
 <br><br><br><br><br>
 
-# Hallo Tidyverse Experten
+# Congratulations!
 
-Nach zwei Tagen kennt ihr nun die Grundlagen von R und des Tidyverse!
+Nach 2.5 Tagen kennt ihr nun die Grundlagen von R und des Tidyverse!
 
 ]
 
-.pull-right4[
-
-<img src="image/schedule.png" height="580" align="center">
+.pull-right55[
+<br><br>
+<img src="image/schedule.png" height="520" align="center">
 ]
 
 ---
 
 .pull-left2[
 
-# "Tidyverse" kann noch mehr
+# R & tidyverse können noch mehr
 
 ]
 
@@ -91,32 +91,12 @@ Nach zwei Tagen kennt ihr nun die Grundlagen von R und des Tidyverse!
 
 <p align = "center">
   <br><br>
-  <img src="image/hexwall.png" height=480px></img><br>
-  <font style="font-size:10px">from <a href="https://www.mitchelloharawild.com/blog/hexwall/">mitchelloharawild.com</a></font>
+  <img src="image/hexwall_large.jpeg" height=480px></img><br>
+  <font style="font-size:10px">from <a href="https://twitter.com/mitchoharawild/status/1007297976711110659">twitter.com/mitchoharawild</a></font>
 </p>
 
 ]
 
----
-
-# Nächste Schritte
-
-.pull-left5[
-<font size = 4><i>
-<font size = 6>
-1. Anwenden<br>
-2. Bücher<br>
-3. Webseiten<br>
-4. Hilfe & Consulting<br>
-5. Weiterführende Kurse<br>
-]
-
-</font>
-<br>
-
-.pull-right5[
-<p align="center"><img border="0" alt="W3Schools" src="http://www.theunmanageableemployee.com/wp-content/uploads/2011/07/5cs-stones-cropped-11052730.jpg?w=112"></p>
-]
 
 ---
 
@@ -141,7 +121,7 @@ Hier ist eine unvollständige Liste guter Bücher über R lose geordnet nach vor
   </td>
 
   <td>
-  <a href="https://www.springer.com/de/book/9783540799979"><img border="0" alt="W3Schools" src="https://images.springer.com/sgw/books/medium/9783540799979.jpg" height="180" ></a>
+  <a href="https://www.springer.com/de/book/9783540799979"><img border="0" alt="W3Schools" src="https://i.weltbild.de/p/programmieren-mit-r-072363255.jpg" height="180" ></a>
   </td>
   
   <td>
@@ -194,35 +174,6 @@ Hier ist eine unvollständige Liste guter Bücher über R lose geordnet nach vor
 
 ---
 
-.pull-left4[
-
-# Webseiten
-
-Das Netz ist vll. der beste Ort für Informationen über R.
-
-<font size = 4><i>Beginnt eure Suche mit:</i></font>
-
-[Google](www.google.com). Stellt sicher, dass ihr *R* oder *Rproject* mit in eurer Suche habt. 
-
-<br>
-<font size = 4><i>Meistens werdet ihr dann weitergeleitet zu:</i></font>
-
-[R-bloggers](www.r-bloggers.com) informiert euch über die neusten R Entwicklungen. Meldet euch für den Newsletter an.
-
-[Stackoverflow](https://stackoverflow.com/questions/tagged/r) ist eine Seite für R Probleme und Lösungen. Versucht selbst mal ein Problem zu posten. Oft bekommt ihr erstaunlich schnell Antwort.
-
-]
-
-.pull-right5[
-<p align="left" style="padding: 0 0px"><br><br><br><br><br><br><br><br><br>
-    <a href="https://www.google.com/"><img border="0" alt="W3Schools" src="https://raw.githubusercontent.com/therbootcamp/therbootcamp.github.io/master/_sessions/_image/google.png" height="100"></a><br><br><br2>
-    <a href="https://www.r-bloggers.com/"><img border="0" alt="W3Schools" src="https://raw.githubusercontent.com/therbootcamp/therbootcamp.github.io/master/_sessions/_image/rbloggers.png" height="105" style="margin-bottom:10px"></a><br>
-  <a href="https://stackoverflow.com/"><img border="0" alt="W3Schools" src="https://raw.githubusercontent.com/therbootcamp/therbootcamp.github.io/master/_sessions/_image/stackoverflow.png" height="105"></a>
-</p>
-]
-
----
-
 # Weiterführende Kurse
 
 
@@ -239,7 +190,7 @@ Das Netz ist vll. der beste Ort für Informationen über R.
       <font style="font-size:20px;weight:700"><br>Einführung in die moderne Datenanalyse mit R</font><br>
       <br>
       <img src="https://therbootcamp.github.io/img/courses/0.png" height="180px" style="border-radius:50%;border:10px solid #E9ECEF"></img><br><br>
-      <high>Apr 8,<br>2022</high><br><br><br><br>
+      
     </p>
   </td>
   <td>
@@ -248,7 +199,7 @@ Das Netz ist vll. der beste Ort für Informationen über R.
       <font style="font-size:20px;weight:700"><br>Explorative Datenanalyse mit R<br></font><br>
       <br>
       <img src="https://therbootcamp.github.io/img/courses/1.png" height="180px" style="border-radius:50%;border:10px solid #E9ECEF"></img><br><br>
-      <high>Mar 4-5,<br>2022</high><br><br><br><br>
+
     </p>
   </td>
   <td>
@@ -257,7 +208,7 @@ Das Netz ist vll. der beste Ort für Informationen über R.
       <font style="font-size:20px;weight:700"><br>Statistik mit R<br><br></font><br>
       <br>
       <img src="https://therbootcamp.github.io/img/courses/2.png" height="180px" style="border-radius:50%;border:10px solid #E9ECEF"></img><br><br>
-      <high>Apr 22-23,<br>2022</high><br><br><br><br>
+
       </a>
     </p>
   </td>
@@ -267,7 +218,7 @@ Das Netz ist vll. der beste Ort für Informationen über R.
       <font style="font-size:20px;weight:700"><br>Maschinelles Lernen mit R<br></font><br>
       <br>
       <img src="https://therbootcamp.github.io/img/courses/3.png" height="180px" style="border-radius:50%;border:10px solid #E9ECEF"></img><br><br>
-      <high>Mai 13-14,<br>2022</high><br><br><br><br>
+
       </a>
     </p>
   </td>
@@ -277,7 +228,7 @@ Das Netz ist vll. der beste Ort für Informationen über R.
       <font style="font-size:20px;weight:700"><br>Reporting mit R<br><br></font><br>
       <br>
       <img src="https://therbootcamp.github.io/img/courses/4.png" height="180px" style="border-radius:50%;border:10px solid #E9ECEF"></img><br><br>
-      <high>Jun 10<br>2022</high><br><br><br><br>
+
       </a>
     </p>
   </td>
@@ -300,9 +251,10 @@ Das Netz ist vll. der beste Ort für Informationen über R.
 .pull-right45[
 
 <p align="center"><br><br>
-<iframe src="https://docs.google.com/forms/d/e/1FAIpQLScr2EsboXcucWmpEvRbph5hEs3K2v5V932YSZG795Cu4R_r5w/viewform?embedded=true" width="430" height="550" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe></p>
+<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSd7uykwaUaEyPUNtEgZ2oBP2urN3dIewghHR8MO4If8jFmQOw/viewform?embedded=true" width="430" height="550" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe></p>
 
 ]
+
 
 ---
 class: center, middle

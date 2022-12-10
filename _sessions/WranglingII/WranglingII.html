@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="" xml:lang="">
   <head>
-    <title>Wrangling II</title>
+    <title>dplyr II</title>
     <meta charset="utf-8" />
-    <meta name="author" content="Explorative Datenanalyse mit R  The R Bootcamp                 " />
+    <meta name="author" content="R 4 Data Science  The R Bootcamp @ CSS                 " />
     <script src="libs/header-attrs/header-attrs.js"></script>
     <link href="libs/remark-css/default.css" rel="stylesheet" />
     <link rel="stylesheet" href="baselrbootcamp.css" type="text/css" />
@@ -12,9 +12,15 @@
     <textarea id="source">
 class: center, middle, inverse, title-slide
 
-# Wrangling II
-### Explorative Datenanalyse mit R<br> <a href='https://therbootcamp.github.io'>The R Bootcamp</a> <br> <a href='https://therbootcamp.github.io/EDA_2022Mar/'> <i class='fas fa-clock' style='font-size:.9em;'></i> </a>  <a href='https://therbootcamp.github.io'> <i class='fas fa-home' style='font-size:.9em;' ></i> </a>  <a href='mailto:therbootcamp@gmail.com'> <i class='fas fa-envelope' style='font-size: .9em;'></i> </a>  <a href='https://www.linkedin.com/company/basel-r-bootcamp/'> <i class='fab fa-linkedin' style='font-size: .9em;'></i> </a>
-### März 2022
+.title[
+# dplyr II
+]
+.author[
+### R 4 Data Science<br> <a href='https://therbootcamp.github.io'>The R Bootcamp @ CSS</a> <br> <a href='https://therbootcamp.github.io/EDA_2022Mar/'> <i class='fas fa-clock' style='font-size:.9em;'></i> </a>  <a href='https://therbootcamp.github.io'> <i class='fas fa-home' style='font-size:.9em;' ></i> </a>  <a href='mailto:therbootcamp@gmail.com'> <i class='fas fa-envelope' style='font-size: .9em;'></i> </a>  <a href='https://www.linkedin.com/company/basel-r-bootcamp/'> <i class='fab fa-linkedin' style='font-size: .9em;'></i> </a>
+]
+.date[
+### Dezember 2022
+]
 
 ---
 
@@ -35,7 +41,7 @@ layout: true
     &lt;/a&gt;
     &lt;a href="https://therbootcamp.github.io/"&gt;
       &lt;font color="#7E7E7E"&gt;
-       Explorative Datenanalyse mit R | März 2022
+       R 4 Data Science | Dezember 2022
       &lt;/font&gt;
     &lt;/a&gt;
     &lt;/span&gt;
@@ -47,62 +53,94 @@ layout: true
 
 
 
-# Noch mehr `dplyr`
+
+
+
+.pull-left3[
+
+# Tidyverse
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Das &lt;mono&gt;tidyverse&lt;/mono&gt; ist...&lt;/span&gt;&lt;/li&gt;&lt;br&gt;
+  &lt;ul class="level"&gt;
+    &lt;li&gt;&lt;span&gt;Eine Auswahl nutzerfreundlicher &lt;high&gt;Pakete&lt;/high&gt; für die Analyse von &lt;high&gt;tidy data&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;&lt;br&gt;
+    &lt;li&gt;&lt;span&gt;Ein &lt;high&gt;Ökosystem&lt;/high&gt; für Analytics und Data Science mit konsistenten Designprinzipien&lt;/span&gt;&lt;/li&gt;&lt;br&gt;
+    &lt;li&gt;&lt;span&gt;Ein &lt;high&gt;Dialekt&lt;/high&gt; von R&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/ul&gt;
+
+]
+
+.pull-right65[
+&lt;br&gt;&lt;br&gt;
+&lt;p align="center"&gt;
+&lt;img src="image/tidyverse_dplyr.png" height = "520px"&gt;
+&lt;/p&gt;
+]
+
+
+
+---
+
+# Noch mehr &lt;mono&gt;dplyr&lt;/mono&gt;
 
 .pull-left45[
 
 
 &lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt;&lt;high&gt;Transformation &amp; Organisation&lt;/high&gt;
-  &lt;br&gt;&lt;br&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;&lt;high&gt;&lt;mono&gt;tidyselect&lt;/mono&gt;&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;
   &lt;ul class="level"&gt;
-    &lt;li&gt;&lt;span&gt;Fehlende Werte ersetzen / entfernen&lt;/span&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;span&gt;Ändere alle Variablen, die...&lt;/span&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;span&gt;Zeilen zu Spalten oder Spalten zu Zeilen&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;Funktionen, die das Auswählen von Variablen erleichtern.&lt;/span&gt;&lt;/li&gt;
   &lt;/ul&gt;
-  &lt;/span&gt;&lt;/li&gt;
-  &lt;li class="m2"&gt;&lt;span&gt;&lt;high&gt;Aggregation&lt;/high&gt;
-  &lt;br&gt;&lt;br&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;&lt;high&gt;Scoping&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;
   &lt;ul class="level"&gt;
-    &lt;li&gt;&lt;span&gt;Nach Variablen gruppieren&lt;/span&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;span&gt;Deskriptive Statistiken berechnen&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;Verben auf mehrere Variablen gleichzeitig anwenden&lt;/span&gt;&lt;/li&gt;
   &lt;/ul&gt;
-  &lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m3"&gt;&lt;span&gt;&lt;high&gt;Pivoting&lt;/high&gt;  &lt;/span&gt;&lt;/li&gt;
+  &lt;ul class="level"&gt;
+    &lt;li&gt;&lt;span&gt;Daten zu wide/long transformieren&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;li class="m4"&gt;&lt;span&gt;&lt;high&gt;Aggregieren&lt;/high&gt;.&lt;/span&gt;&lt;/li&gt;
+  &lt;ul class="level"&gt;
+    &lt;li&gt;&lt;span&gt;Statistiken berechnen&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;li class="m5"&gt;&lt;span&gt;&lt;high&gt;Gruppieren&lt;/high&gt;.&lt;/span&gt;&lt;/li&gt;
+  &lt;ul class="level"&gt;
+    &lt;li&gt;&lt;span&gt;Verben separat für Gruppen von Zeilen anwenden&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;
 &lt;/ul&gt;
 
 ]
 
 
 .pull-right45[
+&lt;br&gt;
 &lt;p align="center"&gt;
-&lt;img src="image/wrangling.jpeg"&gt;&lt;br&gt;
-&lt;font style="font-size:10px"&gt;from &lt;a href="https://DATENsciencebe.com/tag/DATEN-wrangling/"&gt;DATENsciencebe.com&lt;/a&gt;&lt;/font&gt;
+&lt;img src="image/wrangling_img.png"&gt;&lt;br&gt;
+&lt;font style="font-size:10px"&gt;from &lt;a href="https://www.plytix.com/blog/product-information-management-best-practices"&gt;plytix.com&lt;/a&gt;&lt;/font&gt;
 &lt;/p&gt;
 
 ]
 
 ---
 
-# Transformation &amp; Organisation
+# &lt;mono&gt;tidyselect&lt;/mono&gt;
 
 .pull-left4[
 
 &lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt;&lt;high&gt;Transformation&lt;/high&gt;
-  &lt;br&gt;&lt;br&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;&lt;high&gt;Operators&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;&lt;br&gt;
   &lt;ul class="level"&gt;
-    &lt;li&gt;&lt;span&gt;&lt;mono&gt;mutate_if()&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;span&gt;&lt;mono&gt;replace_na()&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;span&gt;&lt;mono&gt;drop_na()&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
-  &lt;/ul&gt;
-  &lt;/span&gt;&lt;/li&gt;
-  &lt;li class="m2"&gt;&lt;span&gt;&lt;high&gt;Organisation&lt;/high&gt;
-  &lt;br&gt;&lt;br&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;:, !&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;&lt;br&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;&lt;high&gt;String matching&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;&lt;br&gt;
   &lt;ul class="level"&gt;
-    &lt;li&gt;&lt;span&gt;&lt;mono&gt;starts_with(), contains(), :&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;span&gt;&lt;mono&gt;pivot_longer(), pivot_wider()&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
-  &lt;/ul&gt;
-  &lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;starts_with(), ends_with(), contains(), matches()&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;&lt;br&gt;
+  &lt;li class="m3"&gt;&lt;span&gt;&lt;high&gt;Character matching&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;&lt;br&gt;
+  &lt;ul class="level"&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;all_of(), any_of()&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;&lt;br&gt;
 &lt;/ul&gt;
 
 ]
@@ -130,269 +168,23 @@ patienten_ergebnisse
 
 ---
 
-# `mutate_if()`
-
-.pull-left4[
-
-&lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt;Transformation
-  &lt;br&gt;&lt;br&gt;
-  &lt;ul class="level"&gt;
-    &lt;li&gt;&lt;span&gt;&lt;high&gt;&lt;mono&gt;mutate_if()&lt;/mono&gt;&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;span&gt;&lt;mono&gt;replace_na()&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;span&gt;&lt;mono&gt;drop_na()&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
-  &lt;/ul&gt;
-  &lt;/span&gt;&lt;/li&gt;
-  &lt;li class="m2"&gt;&lt;span&gt;Organisation
-  &lt;br&gt;&lt;br&gt;
-  &lt;ul class="level"&gt;
-    &lt;li&gt;&lt;span&gt;&lt;mono&gt;starts_with(), contains(), :&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;span&gt;&lt;mono&gt;pivot_longer(), pivot_wider()&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
-  &lt;/ul&gt;
-  &lt;/span&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-]
-
-.pull-right5[
-
-
-```r
-patienten_ergebnisse %&gt;%
-  
-  # Ändere alle numeric in character
-  mutate_if(is.numeric, as.character)
-```
-
-```
-## # A tibble: 5 × 6
-##   id    alter bedingung bed_label  t_1   t_2  
-##   &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;     &lt;chr&gt;      &lt;chr&gt; &lt;chr&gt;
-## 1 1     37    1         placebo    123   135  
-## 2 2     65    2         medikament 143   140  
-## 3 3     57    2         medikament &lt;NA&gt;  &lt;NA&gt; 
-## 4 4     34    1         placebo    100   105  
-## 5 5     45    2         medikament &lt;NA&gt;  &lt;NA&gt;
-```
-
-]
-
----
-
-# `replace_na()`
-
-.pull-left4[
-
-&lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt;Transformation
-  &lt;br&gt;&lt;br&gt;
-  &lt;ul class="level"&gt;
-    &lt;li&gt;&lt;span&gt;&lt;mono&gt;mutate_if()&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;span&gt;&lt;high&gt;&lt;mono&gt;replace_na()&lt;/mono&gt;&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;span&gt;&lt;mono&gt;drop_na()&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
-  &lt;/ul&gt;
-  &lt;/span&gt;&lt;/li&gt;
-  &lt;li class="m2"&gt;&lt;span&gt;Organisation
-  &lt;br&gt;&lt;br&gt;
-  &lt;ul class="level"&gt;
-    &lt;li&gt;&lt;span&gt;&lt;mono&gt;starts_with(), contains(), :&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;span&gt;&lt;mono&gt;pivot_longer(), pivot_wider()&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
-  &lt;/ul&gt;
-  &lt;/span&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-]
-
-.pull-right5[
-
-
-```r
-patienten_ergebnisse %&gt;%
-  
-  # Ändere fehlende Werte in 110
-  mutate(t_1 = replace_na(t_1, 110))
-```
-
-```
-## # A tibble: 5 × 6
-##      id alter bedingung bed_label    t_1   t_2
-##   &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt; &lt;chr&gt;      &lt;dbl&gt; &lt;dbl&gt;
-## 1     1    37         1 placebo      123   135
-## 2     2    65         2 medikament   143   140
-## 3     3    57         2 medikament   110    NA
-## 4     4    34         1 placebo      100   105
-## 5     5    45         2 medikament   110    NA
-```
-
-]
-
----
-
-# `replace_na()`
-
-.pull-left4[
-
-&lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt;Transformation
-  &lt;br&gt;&lt;br&gt;
-  &lt;ul class="level"&gt;
-    &lt;li&gt;&lt;span&gt;&lt;mono&gt;mutate_if()&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;span&gt;&lt;mono&gt;replace_na()&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;span&gt;&lt;high&gt;&lt;mono&gt;drop_na()&lt;/mono&gt;&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;
-  &lt;/ul&gt;
-  &lt;/span&gt;&lt;/li&gt;
-  &lt;li class="m2"&gt;&lt;span&gt;Organisation
-  &lt;br&gt;&lt;br&gt;
-  &lt;ul class="level"&gt;
-    &lt;li&gt;&lt;span&gt;&lt;mono&gt;starts_with(), contains(), :&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;span&gt;&lt;mono&gt;pivot_longer(), pivot_wider()&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
-  &lt;/ul&gt;
-  &lt;/span&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-]
-
-.pull-right5[
-
-
-```r
-patienten_ergebnisse %&gt;%
-  
-  # Entferne Zeilen mit fehlenden Werten
-  drop_na()
-```
-
-```
-## # A tibble: 3 × 6
-##      id alter bedingung bed_label    t_1   t_2
-##   &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt; &lt;chr&gt;      &lt;dbl&gt; &lt;dbl&gt;
-## 1     1    37         1 placebo      123   135
-## 2     2    65         2 medikament   143   140
-## 3     4    34         1 placebo      100   105
-```
-
-]
-
----
-
-# `starts_with()`
-
-.pull-left4[
-
-&lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt;Transformation
-  &lt;br&gt;&lt;br&gt;
-  &lt;ul class="level"&gt;
-    &lt;li&gt;&lt;span&gt;&lt;mono&gt;mutate_if()&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;span&gt;&lt;mono&gt;replace_na()&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;span&gt;&lt;mono&gt;drop_na()&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
-  &lt;/ul&gt;
-  &lt;/span&gt;&lt;/li&gt;
-  &lt;li class="m2"&gt;&lt;span&gt;Organisation
-  &lt;br&gt;&lt;br&gt;
-  &lt;ul class="level"&gt;
-    &lt;li&gt;&lt;span&gt;&lt;high&gt;&lt;mono&gt;starts_with(), contains(), :&lt;/mono&gt;&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;span&gt;&lt;mono&gt;pivot_longer(), pivot_wider()&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
-  &lt;/ul&gt;
-  &lt;/span&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-]
-
-.pull-right5[
-
-
-```r
-patienten_ergebnisse %&gt;%
-  
-  # Wähle spalten aus, die mit "t" beginnen
-  select(starts_with("t"))
-```
-
-```
-## # A tibble: 5 × 2
-##     t_1   t_2
-##   &lt;dbl&gt; &lt;dbl&gt;
-## 1   123   135
-## 2   143   140
-## 3    NA    NA
-## 4   100   105
-## 5    NA    NA
-```
-
-]
-
----
-
-# `contains()`
-
-.pull-left4[
-
-&lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt;Transformation
-  &lt;br&gt;&lt;br&gt;
-  &lt;ul class="level"&gt;
-    &lt;li&gt;&lt;span&gt;&lt;mono&gt;mutate_if()&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;span&gt;&lt;mono&gt;replace_na()&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;span&gt;&lt;mono&gt;drop_na()&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
-  &lt;/ul&gt;
-  &lt;/span&gt;&lt;/li&gt;
-  &lt;li class="m2"&gt;&lt;span&gt;Organisation
-  &lt;br&gt;&lt;br&gt;
-  &lt;ul class="level"&gt;
-    &lt;li&gt;&lt;span&gt;&lt;high&gt;&lt;mono&gt;starts_with(), contains(), :&lt;/mono&gt;&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;span&gt;&lt;mono&gt;pivot_longer(), pivot_wider()&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
-  &lt;/ul&gt;
-  &lt;/span&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-]
-
-.pull-right5[
-
-
-```r
-patienten_ergebnisse %&gt;%
-  
-  # Wähle spalten aus, die "_" beinhalten
-  select(contains("_"))
-```
-
-```
-## # A tibble: 5 × 3
-##   bed_label    t_1   t_2
-##   &lt;chr&gt;      &lt;dbl&gt; &lt;dbl&gt;
-## 1 placebo      123   135
-## 2 medikament   143   140
-## 3 medikament    NA    NA
-## 4 placebo      100   105
-## 5 medikament    NA    NA
-```
-
-]
-
----
-
 # `:`
 
 .pull-left4[
 
 &lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt;Transformation
-  &lt;br&gt;&lt;br&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;&lt;high&gt;Operators&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;&lt;br&gt;
   &lt;ul class="level"&gt;
-    &lt;li&gt;&lt;span&gt;&lt;mono&gt;mutate_if()&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;span&gt;&lt;mono&gt;replace_na()&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;span&gt;&lt;mono&gt;drop_na()&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
-  &lt;/ul&gt;
-  &lt;/span&gt;&lt;/li&gt;
-  &lt;li class="m2"&gt;&lt;span&gt;Organisation
-  &lt;br&gt;&lt;br&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;:, !&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;&lt;br&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;&lt;high&gt;String matching&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;&lt;br&gt;
   &lt;ul class="level"&gt;
-    &lt;li&gt;&lt;span&gt;&lt;high&gt;&lt;mono&gt;starts_with(), contains(), :&lt;/mono&gt;&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;span&gt;&lt;mono&gt;pivot_longer(), pivot_wider()&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
-  &lt;/ul&gt;
-  &lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;starts_with(), ends_with(), contains(), matches()&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;&lt;br&gt;
+  &lt;li class="m3"&gt;&lt;span&gt;&lt;high&gt;Character matching&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;&lt;br&gt;
+  &lt;ul class="level"&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;all_of(), any_of()&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;&lt;br&gt;
 &lt;/ul&gt;
 
 ]
@@ -422,26 +214,441 @@ patienten_ergebnisse %&gt;%
 
 ---
 
-# `pivot_*()`
+# `!`
 
 .pull-left4[
 
 &lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt;Transformation
-  &lt;br&gt;&lt;br&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;&lt;high&gt;Operators&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;&lt;br&gt;
   &lt;ul class="level"&gt;
-    &lt;li&gt;&lt;span&gt;&lt;mono&gt;mutate_if()&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;span&gt;&lt;mono&gt;replace_na()&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;span&gt;&lt;mono&gt;drop_na()&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
-  &lt;/ul&gt;
-  &lt;/span&gt;&lt;/li&gt;
-  &lt;li class="m2"&gt;&lt;span&gt;Organisation
-  &lt;br&gt;&lt;br&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;:, !&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;&lt;br&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;&lt;high&gt;String matching&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;&lt;br&gt;
   &lt;ul class="level"&gt;
-    &lt;li&gt;&lt;span&gt;&lt;mono&gt;starts_with(), contains(), :&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;span&gt;&lt;high&gt;&lt;mono&gt;pivot_longer(), pivot_wider()&lt;/mono&gt;&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;
-  &lt;/ul&gt;
-  &lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;starts_with(), ends_with(), contains(), matches()&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;&lt;br&gt;
+  &lt;li class="m3"&gt;&lt;span&gt;&lt;high&gt;Character matching&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;&lt;br&gt;
+  &lt;ul class="level"&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;all_of(), any_of()&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;&lt;br&gt;
+&lt;/ul&gt;
+
+]
+
+.pull-right5[
+
+
+```r
+patienten_ergebnisse %&gt;%
+  
+  # Spalten ausser alter bis t_1
+  select(!(alter:t_1))
+```
+
+```
+## # A tibble: 5 × 2
+##      id   t_2
+##   &lt;dbl&gt; &lt;dbl&gt;
+## 1     1   135
+## 2     2   140
+## 3     3    NA
+## 4     4   105
+## 5     5    NA
+```
+
+]
+
+
+---
+
+
+# `starts_with()`
+
+.pull-left4[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;&lt;high&gt;Operators&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;&lt;br&gt;
+  &lt;ul class="level"&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;:, !&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;&lt;br&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;&lt;high&gt;String matching&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;&lt;br&gt;
+  &lt;ul class="level"&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;starts_with(), ends_with(), contains(), matches()&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;&lt;br&gt;
+  &lt;li class="m3"&gt;&lt;span&gt;&lt;high&gt;Character matching&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;&lt;br&gt;
+  &lt;ul class="level"&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;all_of(), any_of()&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;&lt;br&gt;
+&lt;/ul&gt;
+
+]
+
+.pull-right5[
+
+
+```r
+patienten_ergebnisse %&gt;%
+  
+  # Wähle spalten aus, die mit "t" beginnen
+  select(starts_with("t"))
+```
+
+```
+## # A tibble: 5 × 2
+##     t_1   t_2
+##   &lt;dbl&gt; &lt;dbl&gt;
+## 1   123   135
+## 2   143   140
+## 3    NA    NA
+## 4   100   105
+## 5    NA    NA
+```
+
+]
+
+---
+
+
+# `ends_with()`
+
+.pull-left4[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;&lt;high&gt;Operators&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;&lt;br&gt;
+  &lt;ul class="level"&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;:, !&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;&lt;br&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;&lt;high&gt;String matching&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;&lt;br&gt;
+  &lt;ul class="level"&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;starts_with(), ends_with(), contains(), matches()&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;&lt;br&gt;
+  &lt;li class="m3"&gt;&lt;span&gt;&lt;high&gt;Character matching&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;&lt;br&gt;
+  &lt;ul class="level"&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;all_of(), any_of()&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;&lt;br&gt;
+&lt;/ul&gt;
+
+]
+
+.pull-right5[
+
+
+```r
+patienten_ergebnisse %&gt;%
+  
+  # Wähle spalten aus, die mit "g" ended
+  select(ends_with("g"))
+```
+
+```
+## # A tibble: 5 × 1
+##   bedingung
+##       &lt;dbl&gt;
+## 1         1
+## 2         2
+## 3         2
+## 4         1
+## 5         2
+```
+
+]
+
+---
+
+# `contains()`
+
+.pull-left4[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;&lt;high&gt;Operators&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;&lt;br&gt;
+  &lt;ul class="level"&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;:, !&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;&lt;br&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;&lt;high&gt;String matching&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;&lt;br&gt;
+  &lt;ul class="level"&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;starts_with(), ends_with(), contains(), matches()&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;&lt;br&gt;
+  &lt;li class="m3"&gt;&lt;span&gt;&lt;high&gt;Character matching&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;&lt;br&gt;
+  &lt;ul class="level"&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;all_of(), any_of()&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;&lt;br&gt;
+&lt;/ul&gt;
+
+]
+
+.pull-right5[
+
+
+```r
+patienten_ergebnisse %&gt;%
+  
+  # Wähle spalten aus, die "_" beinhalten
+  select(contains("_"))
+```
+
+```
+## # A tibble: 5 × 3
+##   bed_label    t_1   t_2
+##   &lt;chr&gt;      &lt;dbl&gt; &lt;dbl&gt;
+## 1 placebo      123   135
+## 2 medikament   143   140
+## 3 medikament    NA    NA
+## 4 placebo      100   105
+## 5 medikament    NA    NA
+```
+
+]
+
+---
+
+# `matches()`
+
+.pull-left4[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;&lt;high&gt;Operators&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;&lt;br&gt;
+  &lt;ul class="level"&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;:, !&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;&lt;br&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;&lt;high&gt;String matching&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;&lt;br&gt;
+  &lt;ul class="level"&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;starts_with(), ends_with(), contains(), matches()&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;&lt;br&gt;
+  &lt;li class="m3"&gt;&lt;span&gt;&lt;high&gt;Character matching&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;&lt;br&gt;
+  &lt;ul class="level"&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;all_of(), any_of()&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;&lt;br&gt;
+&lt;/ul&gt;
+
+]
+
+.pull-right5[
+
+
+```r
+patienten_ergebnisse %&gt;%
+  
+  # Wähle spalten aus, die Zahlen beinhalten
+  select(matches("[0-9]"))
+```
+
+```
+## # A tibble: 5 × 2
+##     t_1   t_2
+##   &lt;dbl&gt; &lt;dbl&gt;
+## 1   123   135
+## 2   143   140
+## 3    NA    NA
+## 4   100   105
+## 5    NA    NA
+```
+
+]
+
+
+---
+
+# &lt;mono&gt;Scoping&lt;/mono&gt;
+
+.pull-left4[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;&lt;high&gt;Helferfunktionen&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;&lt;br&gt;
+  &lt;ul class="level"&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;across, if_any, if_all&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;&lt;br&gt;
+&lt;/ul&gt;
+
+]
+
+.pull-right5[
+
+
+```r
+patienten_ergebnisse
+```
+
+```
+## # A tibble: 5 × 6
+##      id alter bedingung bed_label    t_1   t_2
+##   &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt; &lt;chr&gt;      &lt;dbl&gt; &lt;dbl&gt;
+## 1     1    37         1 placebo      123   135
+## 2     2    65         2 medikament   143   140
+## 3     3    57         2 medikament    NA    NA
+## 4     4    34         1 placebo      100   105
+## 5     5    45         2 medikament    NA    NA
+```
+
+
+]
+
+---
+
+# &lt;mono&gt;across()&lt;/mono&gt;
+
+.pull-left4[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;&lt;high&gt;Helferfunktionen&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;&lt;br&gt;
+  &lt;ul class="level"&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;across, if_any, if_all&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;&lt;br&gt;
+&lt;/ul&gt;
+
+]
+
+.pull-right5[
+
+
+```r
+patienten_ergebnisse %&gt;% 
+  select(-bedingung, -bed_label) %&gt;% 
+  
+  # mutate across für variablen beginnend mit t
+  mutate(across(starts_with("t"), sqrt))
+```
+
+```
+## # A tibble: 5 × 4
+##      id alter   t_1   t_2
+##   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+## 1     1    37  11.1  11.6
+## 2     2    65  12.0  11.8
+## 3     3    57  NA    NA  
+## 4     4    34  10    10.2
+## 5     5    45  NA    NA
+```
+
+
+]
+
+---
+
+# &lt;mono&gt;across()&lt;/mono&gt;
+
+.pull-left4[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;&lt;high&gt;Helferfunktionen&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;&lt;br&gt;
+  &lt;ul class="level"&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;across, if_any, if_all&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;&lt;br&gt;
+&lt;/ul&gt;
+
+]
+
+.pull-right5[
+
+
+```r
+patienten_ergebnisse %&gt;% 
+  select(-bedingung, -bed_label) %&gt;% 
+  
+  # mutate across für variablen beginnend mit t
+  mutate(across(starts_with("t"), sqrt, 
+                .names = "mean_{.col}"))
+```
+
+```
+## # A tibble: 5 × 6
+##      id alter   t_1   t_2 mean_t_1 mean_t_2
+##   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;
+## 1     1    37   123   135     11.1     11.6
+## 2     2    65   143   140     12.0     11.8
+## 3     3    57    NA    NA     NA       NA  
+## 4     4    34   100   105     10       10.2
+## 5     5    45    NA    NA     NA       NA
+```
+
+
+]
+
+
+---
+
+# &lt;mono&gt;if_any()&lt;/mono&gt;
+
+.pull-left4[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;&lt;high&gt;Helferfunktionen&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;&lt;br&gt;
+  &lt;ul class="level"&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;across, if_any, if_all&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;&lt;br&gt;
+&lt;/ul&gt;
+
+]
+
+.pull-right5[
+
+
+```r
+patienten_ergebnisse %&gt;% 
+  select(-bedingung, -bed_label) %&gt;% 
+  
+  # mutate across für variablen beginnend mit t
+  filter(if_any(starts_with("t"), ~ . &lt; 130))
+```
+
+```
+## # A tibble: 2 × 4
+##      id alter   t_1   t_2
+##   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+## 1     1    37   123   135
+## 2     4    34   100   105
+```
+
+
+]
+
+---
+
+# &lt;mono&gt;if_all()&lt;/mono&gt;
+
+.pull-left4[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;&lt;high&gt;Helferfunktionen&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;&lt;br&gt;
+  &lt;ul class="level"&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;across, if_any, if_all&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;&lt;br&gt;
+&lt;/ul&gt;
+
+]
+
+.pull-right5[
+
+
+```r
+patienten_ergebnisse %&gt;% 
+  select(-bedingung, -bed_label) %&gt;% 
+  
+  # mutate across für variablen beginnend mit t
+  filter(if_all(starts_with("t"), ~ . &lt; 130))
+```
+
+```
+## # A tibble: 1 × 4
+##      id alter   t_1   t_2
+##   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+## 1     4    34   100   105
+```
+
+]
+
+---
+
+# &lt;mono&gt;Pivoting&lt;/mono&gt;
+
+.pull-left4[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;&lt;high&gt;Pivot-Funktionen&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;&lt;br&gt;
+  &lt;ul class="level"&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;pivot_wider() - long to wide&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;pivot_longer() - wide to long&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+
+  &lt;/ul&gt;&lt;br&gt;
 &lt;/ul&gt;
 
 ]
@@ -455,6 +662,43 @@ patienten_ergebnisse %&gt;%
 
 ]
 
+---
+
+# &lt;mono&gt;Pivoting&lt;/mono&gt;
+
+.pull-left4[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;&lt;high&gt;Pivot-Funktionen&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;&lt;br&gt;
+  &lt;ul class="level"&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;pivot_wider() - long to wide&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;pivot_longer() - wide to long&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+
+  &lt;/ul&gt;&lt;br&gt;
+&lt;/ul&gt;
+
+]
+
+.pull-right5[
+
+
+```r
+patienten_ergebnisse
+```
+
+```
+## # A tibble: 5 × 6
+##      id alter bedingung bed_label    t_1   t_2
+##   &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt; &lt;chr&gt;      &lt;dbl&gt; &lt;dbl&gt;
+## 1     1    37         1 placebo      123   135
+## 2     2    65         2 medikament   143   140
+## 3     3    57         2 medikament    NA    NA
+## 4     4    34         1 placebo      100   105
+## 5     5    45         2 medikament    NA    NA
+```
+
+
+]
 
 ---
 
@@ -608,6 +852,7 @@ patienten_ergebnisse_lang %&gt;%
 
 ]
 
+
 ---
 
 # Aggregation
@@ -619,8 +864,6 @@ patienten_ergebnisse_lang %&gt;%
   &lt;br&gt;&lt;br&gt;
   &lt;ul class="level"&gt;
     &lt;li&gt;&lt;span&gt;&lt;mono&gt;summarise()&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;span&gt;&lt;mono&gt;summarise_if()&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;span&gt;&lt;mono&gt;group_by(), summarise()&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
     &lt;li&gt;&lt;span&gt;&lt;mono&gt;n(), first(), last(), nth()&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
     &lt;li&gt;&lt;span&gt;&lt;mono&gt;pull()&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
   &lt;/ul&gt;
@@ -635,35 +878,26 @@ patienten_ergebnisse_lang %&gt;%
 
 
 ```r
-basel
+patienten_ergebnisse
 ```
 
 ```
-## # A tibble: 10,000 × 20
-##      id geschlecht alter groesse gewicht
-##   &lt;dbl&gt; &lt;chr&gt;      &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;
-## 1     1 f             87    165     NA  
-## 2     2 m             54    175.    85.6
-## 3     3 f             34    147.    53.9
-## 4     4 m             31    166.   105  
-## 5     5 m             24    180.   102. 
-## # … with 9,995 more rows, and 15 more
-## #   variables: einkommen &lt;dbl&gt;,
-## #   bildung &lt;chr&gt;, konfession &lt;chr&gt;,
-## #   kinder &lt;dbl&gt;, glueck &lt;dbl&gt;,
-## #   fitness &lt;dbl&gt;, essen &lt;dbl&gt;,
-## #   alkohol &lt;dbl&gt;, tattoos &lt;dbl&gt;,
-## #   rhein &lt;dbl&gt;, …
+## # A tibble: 5 × 6
+##      id alter bedingung bed_label    t_1
+##   &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt; &lt;chr&gt;      &lt;dbl&gt;
+## 1     1    37         1 placebo      123
+## 2     2    65         2 medikament   143
+## 3     3    57         2 medikament    NA
+## 4     4    34         1 placebo      100
+## 5     5    45         2 medikament    NA
+## # … with 1 more variable: t_2 &lt;dbl&gt;
 ```
 
 
 ]
 
 
-
 ---
-
-
 
 # `summarise()`
 
@@ -686,20 +920,20 @@ TIBBLE %&gt;%
 
 
 ```r
-basel %&gt;%
+patienten_ergebnisse %&gt;%
   
   # Berechne deskriptive Statistiken
   summarise(
     alter_mean = mean(alter),
-    groesse_median = median(groesse)
+    alter_median = median(alter)
   )
 ```
 
 ```
 ## # A tibble: 1 × 2
-##   alter_mean groesse_median
-##        &lt;dbl&gt;          &lt;dbl&gt;
-## 1       49.4           171.
+##   alter_mean alter_median
+##        &lt;dbl&gt;        &lt;dbl&gt;
+## 1       47.6           45
 ```
 
 
@@ -707,8 +941,7 @@ basel %&gt;%
 
 ---
 
-
-# `summarise_if()`
+# `summarise()`
 
 .pull-left4[
 
@@ -716,9 +949,9 @@ basel %&gt;%
 
 ```r
 TIBBLE %&gt;%
-  summarise_if(
-    BEDINGUNG,
-    SUMMARY_FUN
+  summarise(
+    NAME1 = SUMMARY_FUN(VAR1),
+    NAME2 = SUMMARY_FUN(VAR2)
   )
 ```
 
@@ -729,110 +962,32 @@ TIBBLE %&gt;%
 
 
 ```r
-basel %&gt;%
-  select(alter, groesse, konfession, einkommen)
-```
-
-```
-## # A tibble: 10,000 × 4
-##   alter groesse konfession     einkommen
-##   &lt;dbl&gt;   &lt;dbl&gt; &lt;chr&gt;              &lt;dbl&gt;
-## 1    87    165  katholisch            NA
-## 2    54    175. konfessionslos      7500
-## 3    34    147. konfessionslos      5500
-## 4    31    166. katholisch            NA
-## 5    24    180. katholisch          3800
-## # … with 9,995 more rows
-```
-
-
-]
-
----
-
-
-# `summarise_if()`
-
-.pull-left4[
-
-
-
-```r
-TIBBLE %&gt;%
-  summarise_if(
-    BEDINGUNG,
-    SUMMARY_FUN
-  )
-```
-
-
-]
-
-.pull-right5[
-
-
-```r
-basel %&gt;%
+patienten_ergebnisse %&gt;%
   
   # Berechne deskriptive Statistiken
-  select(alter, groesse, konfession, einkommen) %&gt;%
-  summarise_if(is.numeric, mean)
-```
-
-```
-## # A tibble: 1 × 3
-##   alter groesse einkommen
-##   &lt;dbl&gt;   &lt;dbl&gt;     &lt;dbl&gt;
-## 1  49.4    171.        NA
-```
-
-]
-
----
-
-
-# `summarise_if()`
-
-.pull-left4[
-
-
-
-```r
-TIBBLE %&gt;%
-  summarise_if(
-    BEDINGUNG,
-    SUMMARY_FUN,
-    ARGUMENTE
+  summarise(
+    first_val = first(alter),
+    last_val = last(alter),
+    nth_val = nth(alter, 3),
+    n = n()
   )
 ```
 
+```
+## # A tibble: 1 × 4
+##   first_val last_val nth_val     n
+##       &lt;dbl&gt;    &lt;dbl&gt;   &lt;dbl&gt; &lt;int&gt;
+## 1        37       45      57     5
+```
+
 
 ]
 
-.pull-right5[
-
-
-```r
-basel %&gt;%
-  
-  # Berechne deskriptive Statistiken
-  select(alter, groesse, konfession, einkommen) %&gt;%
-  summarise_if(is.numeric, mean, na.rm = TRUE)
-```
-
-```
-## # A tibble: 1 × 3
-##   alter groesse einkommen
-##   &lt;dbl&gt;   &lt;dbl&gt;     &lt;dbl&gt;
-## 1  49.4    171.     8355.
-```
-
-]
 
 
 ---
 
-# Gruppierte Aggregation
+# Gruppieren
 
 &lt;p align="center"&gt;
   &lt;img src="image/summarsed_data_diagram.png" height="470px"&gt;
@@ -841,7 +996,7 @@ basel %&gt;%
 
 ---
 
-# `group_by()`, `summarise()`
+# `group_by()` + `summarise()`
 
 .pull-left4[
 
@@ -862,31 +1017,31 @@ TIBBLE %&gt;%
 
 
 ```r
-basel %&gt;%
+patienten_ergebnisse %&gt;%
   
-  # Gruppiere nach geschlecht
-  group_by(geschlecht) %&gt;%
+  # Gruppiere nach Bedingung
+  group_by(bed_label) %&gt;%
   
   # Berechne Statistiken
   summarise(
     alter_mean = mean(alter),
-    groesse_median = median(groesse)
+    alter_median = median(alter)
   )
 ```
 
 ```
 ## # A tibble: 2 × 3
-##   geschlecht alter_mean groesse_median
-##   &lt;chr&gt;           &lt;dbl&gt;          &lt;dbl&gt;
-## 1 f                49.8           164 
-## 2 m                49.1           178.
+##   bed_label  alter_mean alter_median
+##   &lt;chr&gt;           &lt;dbl&gt;        &lt;dbl&gt;
+## 1 medikament       55.7         57  
+## 2 placebo          35.5         35.5
 ```
 
 ]
 
 ---
 
-# `n()`
+# `group_by()` + `mutate()`
 
 .pull-left4[
 
@@ -894,56 +1049,9 @@ basel %&gt;%
 ```r
 TIBBLE %&gt;%
   group_by(GRUPPEN_VAR) %&gt;%
-  summarise(
-    NAME1 = SUMMARY_FUN(VAR1),
-    NAME2 = SUMMARY_FUN(VAR2)
-  )
-```
-
-
-]
-
-.pull-right5[
-
-
-
-
-
-```r
-basel %&gt;%
-  
-  # Gruppiere nach geschlecht
-  group_by(geschlecht) %&gt;%
-  
-  # Berechne Statistiken
-  summarise(
-    N = n()
-  )
-```
-
-```
-## # A tibble: 2 × 2
-##   geschlecht     N
-##   &lt;chr&gt;      &lt;int&gt;
-## 1 f           5000
-## 2 m           5000
-```
-
-]
-
----
-
-# `first()`
-
-.pull-left4[
-
-
-```r
-TIBBLE %&gt;%
-  group_by(GRUPPEN_VAR) %&gt;%
-  summarise(
-    NAME1 = SUMMARY_FUN(VAR1),
-    NAME2 = SUMMARY_FUN(VAR2)
+  mutate(
+    NAME1 = MUTATE_FUN(VAR1),
+    NAME2 = MUTATE_FUN(VAR2)
   )
 ```
 
@@ -954,168 +1062,38 @@ TIBBLE %&gt;%
 
 
 ```r
-basel %&gt;%
+patienten_ergebnisse %&gt;%
+  select(-c(t_1, t_2)) %&gt;% 
   
   # Gruppiere nach geschlecht
-  group_by(geschlecht) %&gt;%
+  group_by(bed_label) %&gt;%
   
-  # Berechne Statistiken
-  summarise(
-    N = n(),
-    bild_1 = first(bildung)
-  )
+  # Variablen mutieren
+  mutate(below_med = alter &lt; median(alter)) 
 ```
 
 ```
-## # A tibble: 2 × 3
-##   geschlecht     N bild_1       
-##   &lt;chr&gt;      &lt;int&gt; &lt;chr&gt;        
-## 1 f           5000 obligatorisch
-## 2 m           5000 sek III
+## # A tibble: 5 × 5
+## # Groups:   bed_label [2]
+##      id alter bedingung bed_la…¹ below…²
+##   &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt; &lt;chr&gt;    &lt;lgl&gt;  
+## 1     1    37         1 placebo  FALSE  
+## 2     2    65         2 medikam… FALSE  
+## 3     3    57         2 medikam… FALSE  
+## 4     4    34         1 placebo  TRUE   
+## 5     5    45         2 medikam… TRUE   
+## # … with abbreviated variable names
+## #   ¹​bed_label, ²​below_med
 ```
 
 ]
+
 
 ---
-
-# `last()`
-
-.pull-left4[
-
-
-```r
-TIBBLE %&gt;%
-  group_by(GRUPPEN_VAR) %&gt;%
-  summarise(
-    NAME1 = SUMMARY_FUN(VAR1),
-    NAME2 = SUMMARY_FUN(VAR2)
-  )
-```
-
-
-]
-
-.pull-right5[
-
-
-```r
-basel %&gt;%
-  
-  # Gruppiere nach geschlecht
-  group_by(geschlecht) %&gt;%
-  
-  # Berechne Statistiken
-  summarise(
-    N = n(),
-    bild_1 = first(bildung),
-    bild_N = last(bildung)
-  )
-```
-
-```
-## # A tibble: 2 × 4
-##   geschlecht     N bild_1        bild_N
-##   &lt;chr&gt;      &lt;int&gt; &lt;chr&gt;         &lt;chr&gt; 
-## 1 f           5000 obligatorisch lehre 
-## 2 m           5000 sek III       lehre
-```
-
-]
-
----
-
-# `nth()`
-
-.pull-left4[
-
-
-```r
-TIBBLE %&gt;%
-  group_by(GRUPPEN_VAR) %&gt;%
-  summarise(
-    NAME1 = SUMMARY_FUN(VAR1),
-    NAME2 = SUMMARY_FUN(VAR2)
-  )
-```
-
-
-]
-
-.pull-right5[
-
-
-```r
-basel %&gt;%
-  
-  # Gruppiere nach geschlecht
-  group_by(geschlecht) %&gt;%
-  
-  # Berechne Statistiken
-  summarise(
-    N = n(),
-    bild_1 = first(bildung),
-    bild_N = last(bildung),
-    bild_150 = nth(bildung, 150)
-  )
-```
-
-```
-## # A tibble: 2 × 5
-##   geschlecht     N bild_1        bild_N bild_150  
-##   &lt;chr&gt;      &lt;int&gt; &lt;chr&gt;         &lt;chr&gt;  &lt;chr&gt;     
-## 1 f           5000 obligatorisch lehre  obligator…
-## 2 m           5000 sek III       lehre  lehre
-```
-
-]
-
----
-
-# `pull()`
-
-.pull-left4[
-
-
-```r
-TIBBLE %&gt;%
-  group_by(GRUPPEN_VAR) %&gt;%
-  summarise(
-    NAME = SUMMARY_FUN(VAR),
-  ) %&gt;%
-  pull(NAME)
-```
-
-
-]
-
-.pull-right5[
-
-
-```r
-basel %&gt;%
-  
-  # Gruppiere nach geschlecht
-  group_by(geschlecht) %&gt;%
-  
-  # Berechne Statistiken
-  summarise(N = n()) %&gt;%
-  
-  # Extrahiere Vektor
-  pull(N)
-```
-
-```
-## [1] 5000 5000
-```
-
-]
-
----
-
 
 class: middle, center
 
-&lt;h1&gt;&lt;a href="https://therbootcamp.github.io/EDA_2022Mar/_sessions/WranglingII/WranglingII_practical.html"&gt;Practical&lt;/a&gt;&lt;/h1&gt;
+&lt;h1&gt;&lt;a href="https://therbootcamp.github.io/R4DS_2022CSS/_sessions/WranglingII/WranglingII_practical.html"&gt;Practical&lt;/a&gt;&lt;/h1&gt;
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
@@ -1164,6 +1142,19 @@ if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
     deleted = true;
   });
 })();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
 (function() {
   "use strict"
   // Replace <script> tags in slides area to make them executable

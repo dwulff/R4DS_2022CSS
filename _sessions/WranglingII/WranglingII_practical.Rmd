@@ -35,8 +35,8 @@ knitr::opts_chunk$set(comment = NA,
                       fig.width = 6, 
                       fig.height = 6,
                       fig.align = 'center',
-                      echo = TRUE, 
-                      eval = TRUE, 
+                      echo = FALSE, 
+                      eval = FALSE, 
                       warning = FALSE,
                       message = FALSE)
 
@@ -309,6 +309,33 @@ kc_house %>%
     badezimmer_mean = mean(badezimmer)
   )
 ```
+
+### E - Scoped `summarise`
+
+1. Verwende `across()`, um die mittlere Anzahl an Schlafzimmern (`schlafzimmer`) und Badezimmern (`badezimmer`) zu berechnen. 
+
+```{r eval = FALSE, echo = TRUE}
+kc_house %>%
+  summarise(across(.cols = c(XX, XX), .fns = XX))
+```
+
+```{r}
+kc_house %>%
+  summarise(across(.cols = c(schlafzimmer, badezimmer), .fns = mean))
+```
+
+1. Verwende `across()` und `starts_with()`, um den mittlere grösse aller Quadratmeterzahlen zu bestimmen. 
+
+```{r eval = FALSE, echo = TRUE}
+kc_house %>%
+  summarise(across(.cols = starts_with(XX), .fns = XX))
+```
+
+```{r}
+kc_house %>%
+  summarise(across(.cols = starts_with("qf_"), .fns = mean))
+```
+
 
 ### F - `group_by` und `summarise` 
 

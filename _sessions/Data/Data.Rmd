@@ -1,7 +1,7 @@
 ---
-title: "Daten"
-author: "Explorative Datenanalyse mit R<br>
-  <a href='https://therbootcamp.github.io'>The R Bootcamp</a>
+title: "readr & tibble"
+author: "R 4 Data Science<br>
+  <a href='https://therbootcamp.github.io'>The R Bootcamp @ CSS</a>
   <br>
   <a href='https://therbootcamp.github.io/EDA_2022Mar/'>
     <i class='fas fa-clock' style='font-size:.9em;'></i>
@@ -15,7 +15,7 @@ author: "Explorative Datenanalyse mit R<br>
   <a href='https://www.linkedin.com/company/basel-r-bootcamp/'>
     <i class='fab fa-linkedin' style='font-size: .9em;'></i>
   </a>"
-date: "März 2022"
+date: "Dezember 2022"
 output:
   xaringan::moon_reader:
     css: ["default", "baselrbootcamp.css"]
@@ -43,7 +43,7 @@ layout: true
     </a>
     <a href="https://therbootcamp.github.io/">
       <font color="#7E7E7E">
-       Explorative Datenanalyse mit R | März 2022
+       R 4 Data Science | Dezember 2022
       </font>
     </a>
     </span>
@@ -68,31 +68,193 @@ basel$geschlecht[1:3] = c("W","M","M")
 basel$groesse[1:3] = c(174,180,168)
 ```
 
-<!---
+
+.pull-left3[
+
+# Tidyverse
+
+<ul>
+  <li class="m1"><span>Das <mono>tidyverse</mono> ist...</span></li><br>
+  <ul class="level">
+    <li><span>Eine Auswahl nutzerfreundlicher <high>Pakete</high> für die Analyse von <high>tidy data</high></span></li><br>
+    <li><span>Ein <high>Ökosystem</high> für Analytics und Data Science mit konsistenten Designprinzipien</span></li><br>
+    <li><span>Ein <high>Dialekt</high> von R</span></li>
+  </ul>
+</ul>
+
+]
+
+.pull-right65[
+<br><br>
+<p align="center">
+<img src="image/tidyverse_readr.png" height = "520px">
+</p>
+]
+
+
+
+---
+
+# Datentypen ausserhalb von R
+
+<table class="tg"  style="cellspacing:0; cellpadding:0; border:none;" width="95%">
+<col width=30%>
+<col width=30%>
+<col width=30%>
+<tr>
+  <td bgcolor = 'white' style='vertical-align:top'>
+    <ul>
+      <li class="m1"><span><high>Strukturierte Daten</high>
+        <ul class="level">
+        <li><span>Delimiter getrennt: <mono>.csv</mono>, <mono>.txt</mono>, etc.</span></li>
+        <li><span>Relationale Datenbanken: <mono>SQL</mono></span></li>
+        </ul>
+        <br><img src="image/structured.png" height=250px>
+        </span></li>
+      </ul>
+    </td>
+  <td bgcolor = 'white' style='vertical-align:top'>
+    <ul>
+      <li class="m2"><span><high>Semi-strukturierte Daten</high>
+        <ul class="level">
+        <li><span>Markup: <mono>.xml</mono>, <mono>.xls</mono>, <mono>.html</mono> etc.</span></li>
+        <li><span>Non markup: <mono>JSON</mono>, <mono>MongoDB</mono></span></li>
+        </ul>
+        <br><img src="image/html.png" height=250px>
+        </span></li>
+      </ul>
+    </td>
+  <td bgcolor = 'white' style='vertical-align:top'>
+    <ul>
+      <li class="m3"><span><high>Unstrukturierte Daten</high>
+        <ul class="level">
+        <li><span>z.B. Text</span></li>
+        </ul>
+        <br><br><br><br><br2><img src="image/text.png" height=250px>
+        </span></li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+
+
+---
+
+# <mono>readr</mono> 
 
 .pull-left45[
 
-# `Tidy` Daten
-
 <ul>
-  <li class="m1"><span>Jede Spalte ist eine Variable.</span></li>
-  <li class="m2"><span>Jede Zeile ist eine Beobachtung.</span></li>
-  <li class="m3"><span>Jede Zelle beinhaltet nur einen Wert.</span></li>
+  <li class="m1"><span><high>Delimiter</high> separieren die Spalten.</span></li>
+  <li class="m2"><span>Meist als <high>lokale Textdatei</high> vorliegend.</span></li>
+  <li class="m3"><span><high>Datenklassen</high> werden inferiert.</span></li>
 </ul>
 
-<font style="font-size:16px">...nach <a href="https://github.com/tidyverse/tidyr">Hadley Wickham</a></font>
+<br>
+<p align="center">
+  <img src="image/readr.png" height=200>
+</p>
 
 ]
 
 .pull-right45[
-  <br><br><br>
-  <img src="image/data_frame.png"></img>
+
+<p align="center">
+  <img src="image/structured.png" height=400>
+</p>
+
 ]
 
---->
+---
+
+# <mono>readr</mono> 
+
+.pull-left45[
+
+<ul>
+  <li class="m1"><span><high>Delimiter</high> separieren die Spalten.</span></li>
+  <li class="m2"><span>Meist als <high>lokale Textdatei</high> vorliegend.</span></li>
+  <li class="m3"><span><high>Datenklassen</high> werden inferiert.</span></li>
+</ul>
+
+<br>
+<p align="center">
+  <img src="image/readr.png" height=200>
+</p>
+
+]
+
+.pull-right45[
+
+```{r, echo = F, message=F}
+require(tibble)
+options(tibble.width = 35, tibble.max_extra_cols = 0, tibble.print_max = 3,
+        tibble.print_min = 5)
+```
 
 
-# 3 Klassen von Datenobjekten
+```{r, message = F}
+# Lese Basel Datensatz ein
+basel <- read_csv("1_Data/basel.csv")
+
+# Benutze expliziten Delimiter
+basel <- read_delim("1_Data/basel.csv",
+                   delim = ",")
+basel
+
+```
+
+]
+
+---
+
+# <mono>tibble</mono> 
+
+.pull-left45[
+
+<ul>
+  <li class="m1"><span>Schlanke Version des <high>data frames</high> mit:</span></li>
+  <ul class="level">
+    <li><span>Informativeren <high>Print</high></span></li>
+    <li><span>Keinen <high>Faktoren</high></span></li>
+    <li><span>Konsistenteres <high>Subsetting</high></span></li>
+  </ul>
+</ul>
+
+<br>
+<p align="center">
+  <img src="image/hex-tibble.png" height=200>
+</p>
+
+]
+
+.pull-right45[
+
+```{r, echo = F, message=F}
+require(tibble)
+options(tibble.width = 35, tibble.max_extra_cols = 0, tibble.print_max = 3,
+        tibble.print_min = 5)
+```
+
+
+```{r, message = F}
+# Lese Basel Datensatz ein
+basel <- read_csv("1_Data/basel.csv")
+
+# Benutze expliziten Delimiter
+basel <- read_delim("1_Data/basel.csv",
+                   delim = ",")
+basel
+
+```
+
+]
+
+
+---
+
+# tibbles sind data frames
 
 .pull-left4[
 
@@ -113,7 +275,6 @@ basel$groesse[1:3] = c(174,180,168)
 .pull-right55[
 <img src="image/main_objects.png"></img>
 ]
-
 
 
 ---
@@ -253,7 +414,6 @@ basel
 
   <img src="image/vector.png"></img>
   ]
-
 
 
 ---
@@ -459,275 +619,9 @@ Mehr Info [hier](http://rspatial.org/intr/rst/4-indexing.html).
   ]
 
 
-
 ---
 
-<div class="center_text">
-  <span>
-  Input/Ouput
-  </span>
-</div> 
-
-
----
-
-# Das <mono>tidyverse</mono>
-
-<ul>
-  <li class="m1"><span>Das <a href="https://www.tidyverse.org/"><mono>tidyverse</mono></a> ist eine Sammlung hoch-performanter, nutzerfreundlicher Pakete für eine effiziente Datenaufbereitung und -analyse.</span></li>
-</ul>
-
-<ol style="padding-left:72px">
-  <li><high><mono>readr</mono> für Daten I/O</high>.</li>
-  <li><high><mono>tibble</mono> für moderne <mono>data_frame</mono>'s</high>.</li>
-  <li><mono>dplyr</mono> für Datenverarbeitung.</li>
-  <li><mono>tidyr</mono> für Datenverarbeitung.</li>
-  <li><mono>ggplot2</mono> für Grafiken.</li>
-</ol>
-
-<table style="cellspacing:0; cellpadding:0; border:none;padding-top:20px" width=90%>
-  <col width="15%">
-  <col width="15%">
-  <col width="15%">
-  <col width="15%">
-  <col width="15%">
-  <tr>
-    <td bgcolor="white">
-    <img src="image/hex-readr.png"height=200px></img>
-    </td>
-    <td bgcolor="white">
-    <img src="image/hex-tibble.png" height=200px></img>
-    </td>
-    <td bgcolor="white">
-    <img src="image/hex-dplyr.png"height=200px style="opacity:.2"></img>
-    </td>
-    <td bgcolor="white">
-    <img src="image/hex-tidyr.png"height=200px style="opacity:.2"></img>
-    </td>
-    <td bgcolor="white">
-    <img src="image/hex-ggplot2.png" height=200px style="opacity:.2"></img>
-    </td>
-  </tr>
-</table>
-
-
----
-
-# Datentypen ausserhalb von R
-
-<table class="tg"  style="cellspacing:0; cellpadding:0; border:none;" width="95%">
-<col width=30%>
-<col width=30%>
-<col width=30%>
-<tr>
-  <td bgcolor = 'white' style='vertical-align:top'>
-    <ul>
-      <li class="m1"><span><high>Strukturierte Daten</high>
-        <ul class="level">
-        <li><span>Delimiter getrennt: <mono>.csv</mono>, <mono>.txt</mono>, etc.</span></li>
-        <li><span>Relationale Datenbanken: <mono>SQL</mono></span></li>
-        </ul>
-        <br><img src="image/structured.png" height=250px>
-        </span></li>
-      </ul>
-    </td>
-  <td bgcolor = 'white' style='vertical-align:top'>
-    <ul>
-      <li class="m2"><span><high>Semi-strukturierte Daten</high>
-        <ul class="level">
-        <li><span>Markup: <mono>.xml</mono>, <mono>.xls</mono>, <mono>.html</mono> etc.</span></li>
-        <li><span>Non markup: <mono>JSON</mono>, <mono>MongoDB</mono></span></li>
-        </ul>
-        <br><img src="image/html.png" height=250px>
-        </span></li>
-      </ul>
-    </td>
-  <td bgcolor = 'white' style='vertical-align:top'>
-    <ul>
-      <li class="m3"><span><high>Unstrukturierte Daten</high>
-        <ul class="level">
-        <li><span>z.B. Text</span></li>
-        </ul>
-        <br><br><br><br><br2><img src="image/text.png" height=250px>
-        </span></li>
-      </ul>
-    </td>
-  </tr>
-</table>
-
-
-
----
-
-# <mono>readr</mono> 
-
-.pull-left45[
-
-<ul>
-  <li class="m1"><span><high>Delimiter</high> separieren die Spalten.</span></li>
-  <li class="m2"><span>Meist als <high>lokale Textdatei</high> vorliegend.</span></li>
-  <li class="m3"><span><high>Datenklassen</high> werden inferiert.</span></li>
-</ul>
-
-<br>
-<p align="center">
-  <img src="image/readr.png" height=200>
-</p>
-
-]
-
-.pull-right45[
-
-<p align="center">
-  <img src="image/structured.png" height=400>
-</p>
-
-]
-
----
-
-# <mono>readr</mono> 
-
-.pull-left45[
-
-<ul>
-  <li class="m1"><span><high>Delimiter</high> separieren die Spalten.</span></li>
-  <li class="m2"><span>Meist als <high>lokale Textdatei</high> vorliegend.</span></li>
-  <li class="m3"><span><high>Datenklassen</high> werden inferiert.</span></li>
-</ul>
-
-<br>
-<p align="center">
-  <img src="image/readr.png" height=200>
-</p>
-
-]
-
-.pull-right45[
-
-```{r, echo = F, message=F}
-require(tibble)
-options(tibble.width = 35, tibble.max_extra_cols = 0, tibble.print_max = 3,
-        tibble.print_min = 5)
-```
-
-
-```{r, message = F}
-# Lese Basel Datensatz ein
-basel <- read_csv("1_Data/basel.csv")
-
-# Benutze expliziten Delimiter
-basel <- read_delim("1_Data/basel.csv",
-                   delim = ",")
-basel
-
-```
-
-]
-
----
-
-# <mono>tibble</mono> 
-
-.pull-left45[
-
-<ul>
-  <li class="m1"><span>Schlanke Version des <high>data frames</high> mit:</span></li>
-  <ul class="level">
-    <li><span>Informativeren <high>Print</high></span></li>
-    <li><span>Keinen <high>Faktoren</high></span></li>
-    <li><span>Konsistenteres <high>Subsetting</high></span></li>
-  </ul>
-</ul>
-
-<br>
-<p align="center">
-  <img src="image/hex-tibble.png" height=200>
-</p>
-
-]
-
-.pull-right45[
-
-```{r, echo = F, message=F}
-require(tibble)
-options(tibble.width = 35, tibble.max_extra_cols = 0, tibble.print_max = 3,
-        tibble.print_min = 5)
-```
-
-
-```{r, message = F}
-# Lese Basel Datensatz ein
-basel <- read_csv("1_Data/basel.csv")
-
-# Benutze expliziten Delimiter
-basel <- read_delim("1_Data/basel.csv",
-                   delim = ",")
-basel
-
-```
-
-]
-
-
-
----
-
-# Den Filepath finden
-
-.pull-left45[
-
-<ul>
-  <li class="m1"><span>Finde den Filepath mittels RStudio's <high>Auto-Complete</high>.</span></li>
-  <li class="m2"><span>Setze den Cursor zwischen Anführungszeichen und drücke <highm>Tab</highm>.</span></li>
-</ul>
-
-<br>
-
-<p align="center">
-  <img src="image/tab.png" height="150px" style="border-radius:10px"></img>
-</p>
-
-] 
-
-.pull-right45[
-
-<p align="center">
-  <img src="image/auto_complete_1.png"></img>
-</p>
-
-]
-
----
-
-# Den Filepath finden
-
-.pull-left45[
-
-<ul>
-  <li class="m1"><span>Finde den Filepath mittels RStudio's <high>Auto-Complete</high>.</span></li>
-  <li class="m2"><span>Setze den Cursor zwischen Anführungszeichen und drücke <highm>Tab</highm>.</span></li>
-</ul>
-
-<br>
-
-<p align="center">
-  <img src="image/tab.png" height="150px" style="border-radius:10px"></img>
-</p>
-
-] 
-
-.pull-right45[
-
-<p align="center">
-  <img src="image/auto_complete_2.png"></img>
-</p>
-
-]
-
----
-
-# Inferierte Datentypen 
+# Datentypen inferieren
 
 .pull-left45[
 
@@ -747,11 +641,14 @@ basel <- read_csv("1_Data/basel.csv")
 
 ---
 
-# Inferierte Datentypen 
+# Datentypen inferieren
 
 .pull-left45[
 
-Manchmal ist es nötig `readr` etwas auf die Sprünge zu helfen, damit <high>Datentypen korrekt inferiert</high> werden. 
+
+<ul>
+  <li class="m1"><span>Manchmal ist es nötig <mono>readr</mono> etwas auf die Sprünge zu helfen, damit <high>Datentypen korrekt inferiert</high> werden. </span></li>
+</ul>
 
 ```{r, eval = F}
 # Setze Symbol für fehlende Werte
@@ -939,6 +836,6 @@ data <- jsonlite::read_json(file, ...)
 
 class: middle, center
 
-<h1><a href="https://therbootcamp.github.io/EDA_2022Mar/_sessions/Data/Data_practical.html">Practical</a></h1>
+<h1><a href="https://therbootcamp.github.io/R4DS_2022CSS/_sessions/Data/Data_practical.html">Practical</a></h1>
 
 

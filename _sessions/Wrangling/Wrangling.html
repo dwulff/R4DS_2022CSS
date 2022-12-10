@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="" xml:lang="">
   <head>
-    <title>Wrangling</title>
+    <title>dplyr I</title>
     <meta charset="utf-8" />
-    <meta name="author" content="Explorative Datenanalyse mit R  The R Bootcamp                 " />
+    <meta name="author" content="R 4 Data Science  The R Bootcamp @ CSS                 " />
     <script src="libs/header-attrs/header-attrs.js"></script>
     <link href="libs/remark-css/default.css" rel="stylesheet" />
     <link rel="stylesheet" href="baselrbootcamp.css" type="text/css" />
@@ -12,9 +12,15 @@
     <textarea id="source">
 class: center, middle, inverse, title-slide
 
-# Wrangling
-### Explorative Datenanalyse mit R<br> <a href='https://therbootcamp.github.io'>The R Bootcamp</a> <br> <a href='https://therbootcamp.github.io/EDA_2022Mar/'> <i class='fas fa-clock' style='font-size:.9em;'></i> </a>  <a href='https://therbootcamp.github.io'> <i class='fas fa-home' style='font-size:.9em;' ></i> </a>  <a href='mailto:therbootcamp@gmail.com'> <i class='fas fa-envelope' style='font-size: .9em;'></i> </a>  <a href='https://www.linkedin.com/company/basel-r-bootcamp/'> <i class='fab fa-linkedin' style='font-size: .9em;'></i> </a>
-### März 2022
+.title[
+# dplyr I
+]
+.author[
+### R 4 Data Science<br> <a href='https://therbootcamp.github.io'>The R Bootcamp @ CSS</a> <br> <a href='https://therbootcamp.github.io/EDA_2022Mar/'> <i class='fas fa-clock' style='font-size:.9em;'></i> </a>  <a href='https://therbootcamp.github.io'> <i class='fas fa-home' style='font-size:.9em;' ></i> </a>  <a href='mailto:therbootcamp@gmail.com'> <i class='fas fa-envelope' style='font-size: .9em;'></i> </a>  <a href='https://www.linkedin.com/company/basel-r-bootcamp/'> <i class='fab fa-linkedin' style='font-size: .9em;'></i> </a>
+]
+.date[
+### Dezember 2022
+]
 
 ---
 
@@ -35,7 +41,7 @@ layout: true
     &lt;/a&gt;
     &lt;a href="https://therbootcamp.github.io/"&gt;
       &lt;font color="#7E7E7E"&gt;
-       Explorative Datenanalyse mit R | März 2022
+       R 4 Data Science | Dezember 2022
       &lt;/font&gt;
     &lt;/a&gt;
     &lt;/span&gt;
@@ -56,6 +62,34 @@ layout: true
 
 
 ---&gt;
+
+
+
+.pull-left3[
+
+# Tidyverse
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Das &lt;mono&gt;tidyverse&lt;/mono&gt; ist...&lt;/span&gt;&lt;/li&gt;&lt;br&gt;
+  &lt;ul class="level"&gt;
+    &lt;li&gt;&lt;span&gt;Eine Auswahl nutzerfreundlicher &lt;high&gt;Pakete&lt;/high&gt; für die Analyse von &lt;high&gt;tidy data&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;&lt;br&gt;
+    &lt;li&gt;&lt;span&gt;Ein &lt;high&gt;Ökosystem&lt;/high&gt; für Analytics und Data Science mit konsistenten Designprinzipien&lt;/span&gt;&lt;/li&gt;&lt;br&gt;
+    &lt;li&gt;&lt;span&gt;Ein &lt;high&gt;Dialekt&lt;/high&gt; von R&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/ul&gt;
+
+]
+
+.pull-right65[
+&lt;br&gt;&lt;br&gt;
+&lt;p align="center"&gt;
+&lt;img src="image/tidyverse_dplyr.png" height = "520px"&gt;
+&lt;/p&gt;
+]
+
+
+
+---
 
 .pull-left45[
 
@@ -156,47 +190,6 @@ ergebnisse
 
 ]
 
-
----
-
-# Das &lt;mono&gt;tidyverse&lt;/mono&gt;
-
-&lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt;Das &lt;a href="https://www.tidyverse.org/"&gt;&lt;mono&gt;tidyverse&lt;/mono&gt;&lt;/a&gt; ist eine Sammlung hoch-performanter, nutzerfreundlicher Pakete für eine effiziente Datenaufbereitung und -analyse.&lt;/span&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;ol style="padding-left:72px"&gt;
-  &lt;li&gt;&lt;mono&gt;readr&lt;/mono&gt; für Daten I/O.&lt;/li&gt;
-  &lt;li&gt;&lt;mono&gt;tibble&lt;/mono&gt; für moderne &lt;mono&gt;data_frame&lt;/mono&gt;'s.&lt;/li&gt;
-  &lt;li&gt;&lt;high&gt;&lt;mono&gt;dplyr&lt;/mono&gt; für Datenverarbeitung&lt;/high&gt;.&lt;/li&gt;
-  &lt;li&gt;&lt;high&gt;&lt;mono&gt;tidyr&lt;/mono&gt; für Datenverarbeitung&lt;/high&gt;.&lt;/li&gt;
-  &lt;li&gt;&lt;mono&gt;ggplot2&lt;/mono&gt; für Grafiken.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;table style="cellspacing:0; cellpadding:0; border:none;padding-top:20px" width=90%&gt;
-  &lt;col width="15%"&gt;
-  &lt;col width="15%"&gt;
-  &lt;col width="15%"&gt;
-  &lt;col width="15%"&gt;
-  &lt;col width="15%"&gt;
-  &lt;tr&gt;
-    &lt;td bgcolor="white"&gt;
-    &lt;img src="image/hex-readr.png"height=200px style="opacity:.2"&gt;&lt;/img&gt;
-    &lt;/td&gt;
-    &lt;td bgcolor="white"&gt;
-    &lt;img src="image/hex-tibble.png"height=200px style="opacity:.2"&gt;&lt;/img&gt;
-    &lt;/td&gt;
-    &lt;td bgcolor="white"&gt;
-    &lt;img src="image/hex-dplyr.png"height=200px&gt;&lt;/img&gt;
-    &lt;/td&gt;
-    &lt;td bgcolor="white"&gt;
-    &lt;img src="image/hex-tidyr.png"height=200px&gt;&lt;/img&gt;
-    &lt;/td&gt;
-    &lt;td bgcolor="white"&gt;
-    &lt;img src="image/hex-ggplot2.png" height=200px style="opacity:.2"&gt;&lt;/img&gt;
-    &lt;/td&gt;
-  &lt;/tr&gt;
-&lt;/table&gt;
 
 ---
 
@@ -973,7 +966,7 @@ patienten_ergebnisse %&gt;%
 
 class: middle, center
 
-&lt;h1&gt;&lt;a href="https://therbootcamp.github.io/EDA_2022Mar/_sessions/Wrangling/Wrangling_practical.html"&gt;Practical&lt;/a&gt;&lt;/h1&gt;
+&lt;h1&gt;&lt;a href="https://therbootcamp.github.io/R4DS_2022CSS/_sessions/Wrangling/Wrangling_practical.html"&gt;Practical&lt;/a&gt;&lt;/h1&gt;
 
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
@@ -1023,6 +1016,19 @@ if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
     deleted = true;
   });
 })();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
 (function() {
   "use strict"
   // Replace <script> tags in slides area to make them executable
