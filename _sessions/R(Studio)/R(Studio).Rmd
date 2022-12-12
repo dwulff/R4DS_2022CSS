@@ -226,7 +226,7 @@ summary(res)<br>
   <img src="image/editor_edit.png">
 <br><br><br>
 Shortcut für <high>schicke Code zur Console</high>:<br><br2><font size = 6>&#8984;/ctrl + &#9166;</font><br><br2><br2>
-Shortcut für <high>führe Chunk wiederholt aus</high>:<br><br2><font size = 6>  &#8984;/ctrl + &#9095; + p</font>
+Shortcut für <high>führe Chunk wiederholt aus</high>:<br><br2><font size = 6>  &#8984;/ctrl + &#9095;/alt + p</font>
 </p>
 
 ]
