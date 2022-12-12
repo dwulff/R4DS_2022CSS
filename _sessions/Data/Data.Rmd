@@ -689,7 +689,7 @@ require(RMySQL)
 ```
 
 ```{r}
-# Verbinge mit MySQL Datenbank
+# Verbinde mit MySQL Datenbank
 con <- dbConnect(MySQL(), 
          user='studiech_rbootca', 
          password='Du*5hA+7NU:8T', 
