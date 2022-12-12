@@ -181,9 +181,9 @@ knitr::opts_chunk$set(fig.align = 'center')
   </ul><br>
   <li class="m2"><span><high>Block</high></span></li>
   <ul class="level">
-    <li><span>Folien-basierten Einführung</span></li>
+    <li><span>Folien-basierte Einführung</span></li>
     <li><span>Viele Übungen</span></li>
-    <li><span>Interaktiven Zusammenfassung</span></li>
+    <li><span>Interaktive Zusammenfassung</span></li>
   </ul>
   </span></li>
 </ul>
