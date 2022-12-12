@@ -370,7 +370,7 @@ diamonds
 
 ```{r, eval = F, echo = T}
 # Schreibe den sauberen diamonds Datensatz 
-write_csv(x = XX, path = "XX/XX.csv")
+write_csv(x = XX, file = "XX/XX.csv")
 ```
 
 ```{r, eval = FALSE}
