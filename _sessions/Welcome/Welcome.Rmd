@@ -286,7 +286,7 @@ knitr::opts_chunk$set(fig.align = 'center')
 
 <ul>
   <li class="m1"><span>Wie heisst Du?</span></li>
-  <li class="m2"><span>Was ist Rolle?</span></li>
+  <li class="m2"><span>Was ist Deine Rolle in der CSS?</span></li>
   <li class="m3"><span>Hast du Programmiererfahrung mit R oder anderen Programmiersprachen?</span></li>
   <li class="m4"><span>Welche Probleme möchtest du mit R lösen?</span></li>
 </ul>
