@@ -657,7 +657,7 @@ patienten_ergebnisse %>%
 .pull-left4[
 
 ```{r, eval = F}
-# Filter mit logische Vergleichen
+# Filter mit logischen Vergleichen
 TIBBLE %>%
   filter(VAR1 == WERT1,
          VAR2 > WERT2,
