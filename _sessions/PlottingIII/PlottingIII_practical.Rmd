@@ -6,7 +6,7 @@ author: "<table style='table-layout:fixed;width:100%;border:0;padding:0;margin:0
     <td style='display:block;width:100%;text-align:left;vertical-align:bottom;padding:0;margin:0;border:none' nowrap>
       <font style='font-style:normal'>Explorative Datenanalyse</font>
       <br>
-      <a href='https://therbootcamp.github.io/EDA_2022Mar/'>
+      <a href='https://therbootcamp.github.io/R4DS_2022CSS/'>
         <i class='fas fa-clock' style='font-size:.9em;' ></i>
       </a>
       <a href='https://therbootcamp.github.io'>
@@ -62,7 +62,7 @@ Der Wettbewerb endet in...
 
 <script>
 // Set the date we're counting down to
-var countDownDate = new Date("Dec 15, 2022 17:20:00").getTime();
+var countDownDate = new Date("Dec 15, 2022 16:40:00").getTime();
 
 // Update the count down every 1 second
 var x = setInterval(function() {
@@ -149,13 +149,13 @@ ggsave(filename = "plot_PSEUDONYM.png",
 
 5. Reiche deine Beitrag ein indem Du dein Skript, eine Abbildung, und ein selbstgewähltes Pseudonym an unsere <a href="mailto:therbootcamp@gmail.com"><b>therbootcamp@gmail.com</b></a> Mail Adresse schickst. 
 
-6. Jeder Beitrag wird beurteilt duch eine Jury bestehend aus den Kursteilnehmern. Der Beitrag mit den meisten Punkten gewinnt.   
+6. Jeder Beitrag wird beurteilt duch eine Jury bestehend aus den Kursteilnehmern. Der Beitrag mit den meisten Punkten gewinnt. Die Beurteilung findet im Anschluss an den Kurs statt.    
 
 Wichtig: Entscheidend für den Erfolg ist nicht nur die Ästhetik der Graphik, sondern auch die gewonnenen Erkenntnisse die darin dargestellt sind. Dafür kann es notwendig sein die beiden Datensätze gemeinsam zu analysieren.     
 
 ## Rating
 
-Bitte rated die einzelnen Beiträge über diesen Link (noch nicht aktiv).
+Wir teilen mit Euch einen Link zu einem Fragebogen mit all Euren Abbildungen im Anschluss des Kurses. 
 
 ## Beispiel
 

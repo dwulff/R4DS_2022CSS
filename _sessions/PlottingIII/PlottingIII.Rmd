@@ -3,7 +3,7 @@ title: "ggplot III"
 author: "R 4 Data Science<br>
   <a href='https://therbootcamp.github.io'>The R Bootcamp @ CSS</a>
   <br>
-  <a href='https://therbootcamp.github.io/EDA_2022Mar/'>
+  <a href='https://therbootcamp.github.io/R4DS_2022CSS/'>
     <i class='fas fa-clock' style='font-size:.9em;'></i>
   </a>&#8239; 
   <a href='https://therbootcamp.github.io'>
@@ -455,7 +455,9 @@ library(gridExtra)
 </p>
 ]
 
----
+
+
+<!---
 
 # Text chart
 
@@ -476,7 +478,7 @@ library(gridExtra)
 
 ]
 
----
+
 
 # Tabellen
 
@@ -499,7 +501,7 @@ library(gridExtra)
 
 ]
 
----
+
 
 # Graphiken
 
@@ -522,7 +524,7 @@ library(gridExtra)
 
 ]
 
----
+
 
 # Annotation
 
@@ -561,11 +563,11 @@ library(gridExtra)
 
 ]
 
-
+--->
 
 
 ---
 
 class: middle, center
 
-<h1><a href="https://therbootcamp.github.io/EDA_2022Mar/_sessions/PlottingIII/PlottingIII_practical.html">Practical</a></h1>
+<h1><a href="https://therbootcamp.github.io/R4DS_2022CSS/_sessions/PlottingIII/PlottingIII_practical.html">Wettbewerb</a></h1>

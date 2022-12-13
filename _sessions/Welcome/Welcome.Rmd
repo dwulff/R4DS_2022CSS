@@ -3,7 +3,7 @@ title: "Willkommen"
 author: "R 4 Data Science<br>
   <a href='https://therbootcamp.github.io'>The R Bootcamp @ CSS</a>
   <br>
-  <a href='https://therbootcamp.github.io/EDA_2022Mar/'>
+  <a href='https://therbootcamp.github.io/R4DS_2022CSS/'>
     <i class='fas fa-clock' style='font-size:.9em;'></i>
   </a>&#8239; 
   <a href='https://therbootcamp.github.io'>
@@ -175,9 +175,11 @@ knitr::opts_chunk$set(fig.align = 'center')
 <ul>
   <li class="m1"><span><high>Workshop</high></span></li>
   <ul class="level">
-    <li><span>1 Block zu Data IO</span></li>
-    <li><span>2 Blöcke zu Wrangling</span></li>
-    <li><span>3 Blöcke zu Plotting</span></li>
+    <li><span>Einführung</span></li>
+    <li><span>Session zu Data IO</span></li>
+    <li><span>Sessions zu Wrangling</span></li>
+    <li><span>Sessions zu Plotting</span></li>
+    <li><span>Wettbewerb</span></li>
   </ul><br>
   <li class="m2"><span><high>Block</high></span></li>
   <ul class="level">
